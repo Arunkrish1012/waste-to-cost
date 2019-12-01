@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ADMIN </title>
+	<link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+	<div class="loginbox">
+		<h1> WASTE TO COST</h1>
+		<script>
+$(document).ready(function(){
+$("input").focus(function(){
+$(this).css("background-color","blue");
+$(this).css("color","orange");
+$(this).css("font-size","20px");
+});
+$("input").blur(function(){
+$(this).css("background-color","yellow");
+$(this).css("color","black");
+$(this).css("font-size","30px");
+});
+});
+</script>
+
+		<form name="login" onsubmit="return validation()">
+				<p> Username</p>
+				<input type="text" name="uname" placeholder="Enter Username">
+				<p> Password</p>
+				<input type="password" name="pwd" placeholder="Enter password"><br><br>
+				<input type="submit"  name="" value="Login">
+				<br><br>
+				<a href="#" font-color="blue">Lost your password?</a><br>
+				<a href="#">Don't have an account?</a>
+		</form>
+
+	</div>
+
+	
+<script>
+function validation()
+{
+var uname=document.login.uname.value;
+var pwd=document.login.pwd.value;
+if(uname=="arunkrish" && pwd=="12345")
+{
+window.open("");
+}
+else
+{
+alert("USername or Password is wrong");
+return;
+}
+if(pwd.length<6 || pwd.length>12)
+{
+alert("password must be 6 to 12 charcters");
+return;
+}
+var str=uname.slice(0,1);
+if(uname.slice(0,1)=="_"||uname.slice(0,1)=="@"||str.match(/[0-9]/g)!=null)
+{
+alert("username should not start with _ @ and number");
+return;
+}
+
+}
+</script>
+
+</body>
+</html>
